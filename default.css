@@ -1,0 +1,349 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: black !important;
+    color: white;
+}
+html {
+    scroll-behavior: smooth;
+}
+.navbar {
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+}
+.navbar a {
+    text-decoration: none;
+    background-color: white !important;
+    color: black !important;
+}
+.navbar a:hover {
+    background-color: rgb(138, 133, 133) !important;
+    transition: 1s;
+}
+.navbar h4 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+}
+.navbar button{
+    border-radius: 15px;
+    font-size: 15px;
+    border: 0;
+    padding: 5px;
+    width: 60px;
+    margin-right: 2px;
+    color: black;
+    background-color: white !important;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 2  00;
+    font-size: 20px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgb(138, 133, 133) !important;
+    transition: 1s;
+}
+
+.tagline {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.textline {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-size: 65px;
+}
+.feel {
+    text-align: center;
+}
+.parinig {
+    text-align: center;
+}
+.pamore {
+    text-align: center;
+}
+.imgline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.parinig {
+    max-width: 100%; 
+    height: auto; 
+    min-width: 200px;
+}
+
+.writeb {
+    border-radius: 15px;
+    font-size: 15px;
+    border: 0;
+    padding: 5px;
+    width: 60px;
+    margin-right: 2px;
+    color: black;
+    background-color: white !important;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 2  00;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 40px;
+    width: 400px;
+}
+
+.autoinput {
+    display: flex;
+    justify-content: center;
+}
+.autoinput{
+    text-align: center;
+}
+span{
+    color: #fff724;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    font-weight: 200;
+    font-size: 50px;
+}
+
+.message {
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 30px;
+    margin: 30px;
+    flex-wrap: wrap;
+}
+
+.socials {
+    background-color: white !important;
+}
+.socials i{
+    background-color: white !important;
+    margin-left: 30px !important;
+    align-items: center;
+}
+
+.endline {
+    display: flex;
+    justify-content: space-around;
+    background-color: white !important;
+    align-items: center;
+    text-align: center;
+}
+
+.endline p {
+    margin-right: 8px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+.endinput {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: white !important;
+}
+.endinput input {
+    margin-right: 10px;
+    width: 250px;
+    border: 3px solid black;
+    padding: 4px;
+    background-color: white !important;
+    color: black !important;
+}
+
+.endinput button {
+    padding: 7px;
+    width: 100px;
+    border-radius: 15px;
+    border: 0;
+    background-color: black !important;
+    color: white !important;
+}
+
+.middle {
+    display: flex;
+    justify-content: space-between;
+    background-color: white !important;
+}
+
+.abouttext{
+font-family: "Bebas Neue", sans-serif;
+font-weight: 300;
+font-size: 30px;
+margin-left: 40px;
+
+
+}
+
+.msgb {
+    background-color: white !important;
+    padding: 40px;
+    border-radius: 20px;
+    margin: 4px;
+}
+.msgb p {
+    background-color: white !important;
+    color: black;
+}
+.details {
+    display: flex;
+    justify-content: space-around;
+    background-color: white !important;
+}
+.details p {
+    font-size: 20px;
+}
+.pages {
+    display: flex;
+    justify-content: flex-end;
+}
+.page {
+    margin: 4px;
+    background-color: gray !important;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+}
+
+.about {
+    background-color: white !important;
+    padding: 10px !important;
+    margin-top: 50px;
+    border-top-left-radius: 30px;
+}
+.about p{
+    background-color: white !important;
+    color: black;
+}
+.justify {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white !important;
+}
+
+.rights{
+    background-color: white !important;
+    text-align: center;
+}
+.rights p{
+    margin-bottom: -5px;
+    font-style: italic;
+}
+
+
+.disclaimer {
+    background-color: white !important;
+    border-radius: 20px;
+}
+.how {
+    background-color: white !important;
+    color: black !important;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    font-size: 50px;
+}
+.disclaimer h6{
+    text-align: center;
+    background-color: white !important;
+    color: black !important;
+    margin-left: 80px;
+    margin-right: 80px;
+    font-style: italic;
+}
+.disclaimer h5{
+    text-align: center;
+    background-color: white !important;
+    color: black !important;
+    font-size: 14px;
+    margin-left: 80px;
+    margin-right: 80px;
+    font-style: italic;
+}
+.icons {
+    display: flex;
+    justify-content: space-around;
+    background-color: white !important;
+    color: white !important;
+}
+.iconsplus {
+    text-align: center;
+    background-color: white !important;
+    color: white !important;
+}
+.iconsplus p, i{
+    text-align: center;
+    background-color: white !important;
+    color: black !important;
+}
+
+
+@media (max-width: 768px) { 
+    .textline {
+      font-size: 60px; 
+    }
+    .writeb {
+        border-radius: 15px;
+        font-size: 15px;
+        border: 0;
+        padding: 5px;
+        margin-right: 2px;
+        color: black;
+        background-color: white !important;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 200;
+        font-size: 30px;
+        cursor: pointer;
+        margin-top: 40px;
+        width: 180px !important;
+    }
+    .msgb {
+        background-color: white !important;
+        padding: 20px;
+        border-radius: 20px;
+    }
+    .message {
+        text-align: center;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 30px;
+        margin: 0px;
+    }
+    .parinig {
+        text-align: center;
+        margin-left: -20px;
+    }
+    .abouttext{
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 200;
+        font-size: 10px;
+        margin-left: 40px;
+        }
+  }
+  
+  @media (max-width: 480px) { 
+    .textline {
+      font-size: 45px; 
+    }
+    .writeb {
+        border-radius: 15px;
+        font-size: 15px;
+        border: 0;
+        padding: 5px;
+        margin-right: 2px;
+        color: black;
+        background-color: white !important;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 200;
+        font-size: 10px;
+        cursor: pointer;
+        margin-top: 40px;
+        width: 200px;
+    }
+  }
