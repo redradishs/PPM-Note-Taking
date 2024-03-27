@@ -26,6 +26,10 @@ html {
     font-weight: 900;
     font-size: 30px;
 }
+.row {
+    display: flex;
+    justify-content: center;
+}
 .navbar button{
     border-radius: 15px;
     font-size: 15px;
