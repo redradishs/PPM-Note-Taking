@@ -10,7 +10,10 @@ Public Feed: See a stream of notes from everyone who can access the link.
 
 
 **Demo**
+
 Link: http://parinigpamore.unaux.com/?i=2
+
+
 Usage:
 Open the link: Access the link.
 Write your note: Type your message in the provided text area.
