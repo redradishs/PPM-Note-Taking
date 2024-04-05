@@ -18,7 +18,11 @@ Usage:
 
 
 Open the link: Access the link.
+
+
 Write your note: Type your message in the provided text area.
+
+
 Hit 'Post': Share your note with everyone who can access the app!
 
 
