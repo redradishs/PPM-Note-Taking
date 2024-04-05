@@ -1,7 +1,9 @@
 **PARINIG PA MORE**
+
 A fun and easy-to-use note app where anyone can share their thoughts freely! Whether it's for lighthearted messages between friends and family or even important reminders, Parinig pa more has got you covered.
 
 **Features**
+
 Simple Posting: Quickly type out your note and post it.
 Public Feed: See a stream of notes from everyone who can access the link.
 
@@ -20,3 +22,6 @@ Hit 'Post': Share your note with everyone who can access the app!
 
 There have been 3 reports containing the same error. PPM is still under its beta version, it is on its testing phase. 
 Rest assured that all feedbacks would not go to waste.
+
+
+PPM was developed under ICTe Solutions
