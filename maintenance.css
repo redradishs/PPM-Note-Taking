@@ -1,0 +1,90 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+    color: white;
+}
+
+.maintenance {
+    text-align: center;
+    margin-top: 10px;
+}
+.maintenance h4 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.tagline {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.textlined {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.textlined p {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+}
+
+.autoinput {
+    display: flex;
+    justify-content: center;
+}
+.autoinput{
+    text-align: center;
+}
+
+span{
+    color: #fff724;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    font-weight: 200;
+    font-size: 50px;
+}
+
+.imgline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.imgline i {
+    background-color: black !important;
+    color: white !important;
+    font-size: 250px;
+}
+
+.writeb {
+    border-radius: 15px;
+    font-size: 15px;
+    border: 0;
+    padding: 5px;
+    width: 60px;
+    margin-right: 2px;
+    color: black;
+    background-color: white !important;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 2  00;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 40px;
+    width: 400px;
+}
+
+.modal-dialog {
+    color: black !important;
+}
+
+.close {
+    background-color: red;
+}

@@ -26,10 +26,6 @@ html {
     font-weight: 900;
     font-size: 30px;
 }
-.row {
-    display: flex;
-    justify-content: center;
-}
 .navbar button{
     border-radius: 15px;
     font-size: 15px;
@@ -75,6 +71,11 @@ button:hover{
     align-items: center;
     justify-content: center;
 }
+.imgline i {
+    background-color: black !important;
+    color: white !important;
+    font-size: 250px;
+}
 
 .parinig {
     max-width: 100%; 
@@ -106,6 +107,7 @@ button:hover{
 .autoinput{
     text-align: center;
 }
+
 span{
     color: #fff724;
     font-family: "Bebas Neue", sans-serif;
@@ -289,9 +291,49 @@ margin-left: 40px;
 }
 
 
+/* maintenance section   */
+
+.maintenance {
+    text-align: center;
+    margin-top: 10px;
+}
+.maintenance h4 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.form-group input[type=text] {
+    color: white !important;
+}
+
+.textlined {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-size: 65px;
+}
+.textlined p {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-size: 65px;
+}
+
+
 @media (max-width: 768px) { 
     .textline {
       font-size: 60px; 
+    }
+    .textlined p {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        font-size: 30px;
+    }
+    span{
+        color: #fff724;
+        font-family: "Bebas Neue", sans-serif;
+        text-align: center;
+        font-weight: 200;
+        font-size: 50px;
     }
     .writeb {
         border-radius: 15px;
@@ -329,6 +371,17 @@ margin-left: 40px;
         font-size: 10px;
         margin-left: 40px;
         }
+    .imgline i {
+         background-color: black !important;
+         color: white !important;
+        font-size: 150px;
+     }
+     .maintenance h4 {
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 200;
+        font-size: 20px;
+    }
+
   }
   
   @media (max-width: 480px) { 

@@ -1,18 +1,27 @@
 <?php
 include("connection.php");
+session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-  $username = $_POST['username'];
-  $content = $_POST['content'];
+    // Check if the token matches the one stored in the session
+    if(isset($_POST['token']) && $_POST['token'] === $_SESSION['token']){
+        // Process form submission
+        $username = $_POST['username'];
+        $content = $_POST['content'];
 
-  $query = "INSERT INTO messages (username, content) VALUES (:username, :content)";
-  $stmt = $conn->prepare($query);
-  $stmt->bindParam(":username", $username);
-  $stmt->bindParam(":content", $content);
-  $stmt->execute();
+        $query = "INSERT INTO messages (username, content) VALUES (:username, :content)";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":content", $content);
+        $stmt->execute();
 
-  header("Location: index2.php");
-  exit();
+        // Generate a new token to prevent duplicate submissions
+        $_SESSION['token'] = bin2hex(random_bytes(32));
+
+        // Redirect to the same page to prevent form resubmission
+        header("Location: index.php");
+        exit();
+    }
 }
 
 $sql = "SELECT COUNT(*) AS num_posts FROM messages";
@@ -20,13 +29,16 @@ $stmt = $conn->prepare($sql);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 $num_posts = $row['num_posts']; 
+
+// Generate a token and store it in the session
+$_SESSION['token'] = bin2hex(random_bytes(32));
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PPM | HOME</title>
+    <title>PPM | HomePage</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
@@ -48,10 +60,8 @@ $num_posts = $row['num_posts'];
 
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <!-- Include jQuery library -->
 </head>
-<body>
-<section class="container navbar">
+    <section class="container navbar">
         <h4>PPM | Project</h4>
         <div class="buttons">
             <button type="button" class="button" data-toggle="modal" data-target="#write">ADD</button>
@@ -94,6 +104,7 @@ $num_posts = $row['num_posts'];
           <div class="form-group">
             <label for="message-text" class="col-form-label">Message:</label>
             <input type="text" name="content" class="form-control" id="message-text">
+            <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
           </div>
           <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -111,6 +122,56 @@ $num_posts = $row['num_posts'];
     </div>
 </section>
 
+
+
+
+
+
+    </div>
+
+    </section>
+    <section id="about"class="container disclaimer">
+                    <p class="how">How does this work?</p>
+                    <h5>The system collects data from the user, containing the username and the message they want to send.</h5>
+                    <h5>Once posted the users will be able to post it online, if the content of the post aligns with terms we consider maliscious it will be deleted.</h5>
+                    <h5>The posted contents will also be deleted after a week to minimize the storage consumption</h5>
+                    <p class="how">LANGUAGES USED</p>
+                    <div class="row icons">
+                        <div class="col-sm-6 col-md-4 col-lg-3 iconsplus">
+                            <i class="fa-brands fa-html5" style="font-size: 30px;"></i>
+                            <p>HTML</p>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 iconsplus">
+                            <i class="fa-brands fa-css3-alt" style="font-size: 30px;"></i>
+                            <p>CSS</p>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 iconsplus">
+                            <i class="fa-brands fa-js" style="font-size: 30px;"></i>
+                            <p>JAVASCRIPT</p>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 iconsplus">
+                            <i class="fa-brands fa-bootstrap" style="font-size: 30px;"></i>
+                            <p>BOOTSTRAP</p>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 iconsplus">
+                            <i class="fa-brands fa-php" style="font-size: 30px;"></i>
+                            <p>PHP</p>
+                        </div>
+                    </div>
+            <h5>The developer does not encourage anyone to use this platform for hateful comments but if you do, the developer is not responsible for any content that will be posted here.</h5>
+    </section>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed(".auto-input", {
+            strings: ["HAPPY?", "SAD?", "LOVED?","WRONGED?", "JUDGED?", "HURT?"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            loop: true
+        })
+    </script>
 <script>
     $(document).ready(function () {
         function fetchMessages() {
@@ -148,14 +209,6 @@ $num_posts = $row['num_posts'];
         setInterval(fetchMessages, 5000);
     });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-        var typed = new Typed(".auto-input", {
-            strings: ["HAPPY?", "SAD?", "LOVED?","WRONGED?", "JUDGED?", "HURT?"],
-            typeSpeed: 100,
-            backSpeed: 100,
-            loop: true
-        })
-    </script>
+
 </body>
 </html>
