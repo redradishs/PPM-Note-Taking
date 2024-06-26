@@ -1,9 +1,11 @@
 <?php
-$db_username = "root";
-$db_password = "";
-$db_name = "ppm_database";
+date_default_timezone_set('Asia/Manila'); 
 
-$conn = new PDO("mysql:host=127.0.0.1;dbname=". $db_name .";charset=utf8",$db_username, $db_password);
+$db_username = "ezyro_36256704";
+$db_password = "49f4aa14690";
+$db_name = "ezyro_36256704_ppm";
+
+$conn = new PDO("mysql:host=sql313.ezyro.com;dbname=". $db_name .";charset=utf8",$db_username, $db_password);
 
 
 //set some pdo attributes

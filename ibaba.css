@@ -1,0 +1,47 @@
+/* ibaba section  */
+.ibaba {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    background-color: white !important;
+}
+.ibaba img {
+    background-color: black !important;
+}
+.taasonti {
+    margin-top: 90px;
+}
+.ibaba p {
+    background-color: white !important;
+    color: black !important;
+    font-style: italic;
+    font-size: 18px;
+}
+.logos {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    background-color: white !important;
+}
+.logos i {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: white !important;
+    font-size: 30px;
+}
+
+@media (max-width: 768px) { 
+    .logos {
+        gap: 30px;
+    }
+    .ibaba p {
+        background-color: white !important;
+        color: black !important;
+        font-style: italic;
+        font-size: 14px;
+    }
+  }
+  

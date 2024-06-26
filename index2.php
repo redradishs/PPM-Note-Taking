@@ -44,6 +44,7 @@ $_SESSION['token'] = bin2hex(random_bytes(32));
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
     <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="ibaba.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -123,44 +124,22 @@ $_SESSION['token'] = bin2hex(random_bytes(32));
 </section>
 
 
+<img src="wave.png" alt="wave" class="img-fluid">
+<section id="about" class="ibaba">
+            <div class="logos">
+            <i class="fa-brands fa-html5"></i>
+            <i class="fa-brands fa-css3-alt"></i>
+            <i class="fa-brands fa-js"></i>
+            <i class="fa-brands fa-bootstrap"></i>
+            <i class="fa-brands fa-php"></i>
+            </div>
+  <p>All rights 2024 ICTe Solutions</p>
+</section>
 
 
 
 
-    </div>
 
-    </section>
-    <section id="about"class="container disclaimer">
-                    <p class="how">How does this work?</p>
-                    <h5>The system collects data from the user, containing the username and the message they want to send.</h5>
-                    <h5>Once posted the users will be able to post it online, if the content of the post aligns with terms we consider maliscious it will be deleted.</h5>
-                    <h5>The posted contents will also be deleted after a week to minimize the storage consumption</h5>
-                    <p class="how">LANGUAGES USED</p>
-                    <div class="row icons">
-                        <div class="col-sm-6 col-md-4 col-lg-3 iconsplus">
-                            <i class="fa-brands fa-html5" style="font-size: 30px;"></i>
-                            <p>HTML</p>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 iconsplus">
-                            <i class="fa-brands fa-css3-alt" style="font-size: 30px;"></i>
-                            <p>CSS</p>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 iconsplus">
-                            <i class="fa-brands fa-js" style="font-size: 30px;"></i>
-                            <p>JAVASCRIPT</p>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 iconsplus">
-                            <i class="fa-brands fa-bootstrap" style="font-size: 30px;"></i>
-                            <p>BOOTSTRAP</p>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 iconsplus">
-                            <i class="fa-brands fa-php" style="font-size: 30px;"></i>
-                            <p>PHP</p>
-                        </div>
-                    </div>
-            <h5>The developer does not encourage anyone to use this platform for hateful comments but if you do, the developer is not responsible for any content that will be posted here.</h5>
-    </section>
-    
 
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -172,43 +151,56 @@ $_SESSION['token'] = bin2hex(random_bytes(32));
             loop: true
         })
     </script>
+
 <script>
-    $(document).ready(function () {
-        function fetchMessages() {
-            $.ajax({
-                url: 'get_message.php',
-                type: 'GET',
-                dataType: 'json',
-                success: function (response) {
-                    displayMessages(response);
-                },
-                error: function (xhr, status, error) {
-                    console.error('Error fetching messages:', error);
-                }
-            });
-        }
+  $(document).ready(function () {
+    function fetchMessages() {
+        $.ajax({
+            url: 'get_message.php',
+            type: 'GET',
+            dataType: 'json',
+            success: function (response) {
+                displayMessages(response);
+            },
+            error: function (xhr, status, error) {
+                console.error('Error fetching messages:', error);
+            }
+        });
+    }
 
-        function displayMessages(messages) {
-            $('#message-container').empty();
-            messages.forEach(function (message) {
-                var formattedTimestamp = new Date(message.timestamp).toLocaleString();
-                var messageHtml = '<div class="msgb col-sm-6 col-md-4 col-lg-3"> ' +
-                    '<div class="details">' +
-                    '<p>User: ' + message.username + '</p>' +
-                    '<p>' + formattedTimestamp + '</p>' +
-                    '</div>' +
-                    '<p>' + message.content + '</p>' +
-                    '</div>';
-                $('#message-container').append(messageHtml);
-            });
-            $('#num-posts').text(messages.length);
-        }
+    function displayMessages(messages) {
+      $('#message-container').empty();
+var currentTime = new Date(); // Get the current time
+var currentTimeAdjusted = new Date(currentTime.getTime() - (12 * 60 * 60 * 1000)); // Adjust current time by subtracting 11 hours
+messages.forEach(function (message) {
+    var messageTime = new Date(message.timestamp); // Get the message's timestamp
+    var timeDifferenceInMinutes = Math.floor((currentTimeAdjusted - messageTime) / (1000 * 60)); // Calculate the time difference in minutes
+    var timeDifferenceInHours = Math.floor(timeDifferenceInMinutes / 60); // Calculate the time difference in hours
+    var timeDifferenceInDays = Math.floor(timeDifferenceInHours / 24); // Calculate the time difference in days
+    var remainingMinutes = timeDifferenceInMinutes % 60; // Calculate the remaining minutes after subtracting hours
+    var remainingHours = timeDifferenceInHours % 24; // Calculate the remaining hours after subtracting days
+    var daysAgo = timeDifferenceInDays === 1 ? '1 day' : timeDifferenceInDays + ' days'; // Format days ago message
+    var hoursAgo = remainingHours === 1 ? '1 hour' : remainingHours + ' hours'; // Format hours ago message
+    var minutesAgo = remainingMinutes === 1 ? '1 minute' : (remainingMinutes === 0 ? 'just now' : (remainingMinutes < 10 ? 'few minutes ago' : remainingMinutes + ' minutes')); // Format minutes ago message
+    var timeAgo = timeDifferenceInDays > 0 ? daysAgo : (timeDifferenceInHours > 0 ? hoursAgo : minutesAgo); // Display days ago, hours ago, or minutes ago based on the time difference
+    var messageHtml = '<div class="msgb col-sm-6 col-md-4 col-lg-3"> ' +
+        '<div class="details">' +
+        '<p>User: ' + message.username + '</p>' +
+        '<p>' + timeAgo + '</p>' + // Display how long ago the message was posted
+        '</div>' +
+        '<p>' + message.content + '</p>' +
+        '</div>';
+    $('#message-container').append(messageHtml);
+});
+$('#num-posts').text(messages.length);
+}
 
-        fetchMessages();
-    
-        setInterval(fetchMessages, 5000);
-    });
+    fetchMessages();
+
+    setInterval(fetchMessages, 5000);
+});
 </script>
+
 
 </body>
 </html>
