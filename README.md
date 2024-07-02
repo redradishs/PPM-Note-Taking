@@ -23,4 +23,5 @@ There have been 3 reports containing the same error. PPM is still in its beta ve
 
 PPM was developed under ICTe Solutions, making it the 6th project under ICTe Solutions.
 
-**In Collaboration with:** ICTe Solutions 2024, as Full Stack Developer.
+## **In Collaboration with:**
+ICTe Solutions 2024, as Full Stack Developer.
