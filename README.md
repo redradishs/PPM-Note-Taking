@@ -27,6 +27,6 @@ PPM was developed under ICTe Solutions, making it the 6th project under ICTe Sol
 ICTe Solutions 2024, as Full Stack Developer.
 redanicas@ictesolutions.tech
 
-## **In Collaboration with:**
-NOTICE 03/10/2025 PPM has been transfered to Angular 19 and hosted to Cloudflare you may access the link here: 
+## **NOTICE:**
+03/10/2025 PPM has been transfered to Angular 19 and hosted to Cloudflare you may access the link here: 
 Link: [Parinig pa more](https://ppmcdn.pages.dev)
