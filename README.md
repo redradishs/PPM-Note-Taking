@@ -9,11 +9,11 @@ A fun and easy-to-use note app where anyone can share their thoughts freely! Whe
 
 ## **Demo**
 
-Link: [Parinig pa more](http://parinigpamore.unaux.com/)
+Link: [Parinig pa more](http://parinigpamore.unaux.com)
 
 ## **Usage:**
 
-1. **Open the Link:** Access the [link](http://parinigpamore.unaux.com/).
+1. **Open the Link:** Access the [link](http://parinigpamore.unaux.com).
 2. **Write Your Note:** Type your message in the provided text area.
 3. **Hit 'Post':** Share your note with everyone who can access the app!
 
@@ -25,3 +25,8 @@ PPM was developed under ICTe Solutions, making it the 6th project under ICTe Sol
 
 ## **In Collaboration with:**
 ICTe Solutions 2024, as Full Stack Developer.
+redanicas@ictesolutions.tech
+
+## **In Collaboration with:**
+NOTICE 03/10/2025 PPM has been transfered to Angular 19 and hosted to Cloudflare you may access the link here: 
+Link: [Parinig pa more](https://ppmcdn.pages.dev)
